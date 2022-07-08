@@ -1,0 +1,28 @@
+<div fxLayout="row " class="container">
+    <ng-container *ngFor="let item of books; let i=index">
+        <mat-card class="book-card mat-elevation-z2 styles">
+            <mat-card-content class="image-card">
+                <a><img class="preview-image" mat-card-image
+                        src="https://bookcart.azurewebsites.net/Upload/{{item.coverFileName}}"
+                        alt="Book cover image"></a>
+            </mat-card-content>
+            <div class="image__overlay" (click)="goToPage(i)">
+                <div class="image__title"><button id="button">{{item.title}}</button></div>
+            </div>
+            <!-- Icon -->
+            <span><i *ngIf="idArray.includes(item.bookId)" class="fas fa-heart "
+                    (click)="removeFromWishlist(i)"></i></span>
+            <span><i *ngIf="!idArray.includes(item.bookId)" class="far fa-heart" (click)="addtoWhishList(i)"></i></span>
+            <mat-card-content>
+                <div class="card-title">
+                    <strong style="color:#007bff;">{{item.title}}</strong>
+                </div>
+                <p>{{item.price | currency : 'INR'}}</p>
+                <button (click)="addToCart(i)" mat-raised-button color="primary" class="Button">
+                    <mat-icon style="font-size: 15px;">shopping_cart</mat-icon>
+                    Add to Cart
+                </button>
+            </mat-card-content>
+        </mat-card>
+    </ng-container>
+</div>
