@@ -1,0 +1,67 @@
+<p>booksfilter works!</p>
+
+
+<div class="searchFilter">
+    <span style="margin-left:20px"> Book Cart </span> 
+    <input type="text"  #inputbox  placeholder="Search Book Names" style="margin:20px;"> 
+    <button (click)="inputSearch(inputbox.value)"> Search </button>
+</div>
+    
+    
+<div class="row" style="display: flex" >
+  <div class="col-2 leftcol"> 
+    <div>
+        <mat-nav-list>
+        <mat-list-item (click)="Allcategories()" > <a> All Categories </a> </mat-list-item> <mat-divider> </mat-divider> 
+        <mat-list-item   *ngFor="let a of categoriesName;   let i=index"   (click)="categoryList(a.categoryName)"     [queryParams]="{category: a.categoryName}" 
+                [routerLink]="['/filter']"  >
+             <a> {{a.categoryName}} </a> 
+             <mat-divider></mat-divider>
+        </mat-list-item>
+        </mat-nav-list>
+    </div>
+
+    <div class="price">
+        <mat-list>
+          <mat-list-item class="PriceFilter"> Price Filter </mat-list-item>
+         </mat-list>
+      
+       <mat-slider
+          class="example-margin"
+          [disabled]="disabled"
+          [invert]="invert"
+          [max]="max"
+          [min]="min"
+          [step]="step"
+          [thumbLabel] ="thumbLabel"
+          [displayWith] = "formatLabel"
+          [tickInterval]="getSliderTickInterval()"
+          [(ngModel)] ="value" 
+          [vertical]="vertical"
+          aria-labelledby="example-name-label" (valueChange)="Allcategories()"> 
+        </mat-slider>
+          
+          <h1> {{min | currency: 'INR'}} to {{value | currency: 'INR'}} </h1>
+  
+      </div>
+
+    </div>
+
+
+    <div class="container col-9" >
+        <div class="row">
+          <ng-container *ngFor="let product of displayList;let i=index"  >
+            <div class="card col-md-3" >
+              <mat-card-content>
+                <img class="image" src="https://bookcart.azurewebsites.net/Upload/{{product.coverFileName}}" alt="">
+                <h3 class="title"> {{product.title}} </h3>
+                <p> {{product.price | currency: 'INR'}} </p>
+                <button class="btn btn-primary buttons"> <span> <mat-icon> shopping_cart   </mat-icon> </span> Add to Cart </button>
+              </mat-card-content>
+            </div>
+          </ng-container>
+        </div>
+    </div>
+
+</div>
+

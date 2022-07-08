@@ -1,0 +1,110 @@
+.productfilter{
+    background-color: black;
+    color: white;
+    width: 300px;
+    margin-left: 200px;
+}
+
+.categorylistitems{
+    width: 315px;
+    
+}
+
+.mat-list-item:hover{
+    cursor: pointer;
+    background-color: rgb(236, 232, 232);
+}
+
+.all-category{
+    background-color: orangered;
+    
+}
+
+
+.category{
+    font-size: 18px;
+    
+}
+
+.mat-list-item::selection{
+    background-color: orangered;
+}
+
+.PriceFilter{
+    background-color: rgb(252, 74, 133);
+    color:white;
+    width: 250px;
+    font-size: 30px;
+}
+.mat-slider {
+    width: 300px;
+    color:rgb(236, 62, 120);
+  }
+
+  img{
+    width: 300px;
+    height:400px;
+    margin-left: -15px;
+    margin-bottom: 20px;
+    
+  }
+  
+.card{
+    width: 300px;
+    height:550px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    justify-items: center;
+    
+}
+     
+.price{
+    border: 1px solid;
+    border-color: rgb(207, 205, 205);
+}
+
+.filter{
+    border: 1px solid;
+    border-color: rgb(207, 205, 205);
+}
+
+h1{
+font-size: 30px;
+font-weight: bold;
+text-align: center;
+}
+
+p{
+    font-size: 20px;
+}
+
+.title{
+    white-space: nowrap;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    max-width: 30ch;
+    font-weight: bold; font-size: 20px;
+    color: rgb(44, 139, 248);
+}
+
+.buttons{
+    width: 200px;
+    height: 50px;
+    margin-bottom: 100px;
+}
+
+.leftcol{
+    margin-left: 100px;
+}
+
+.searchFilter{
+    background-color: rgb(66, 66, 248);
+    color: white;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.mat-nav-list{
+    border: 1px solid rgb(187, 186, 186);
+    
+}
